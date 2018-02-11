@@ -1,3 +1,53 @@
+// Main Title
 h1 {
-    color: blue;
+    font-family: $fontHeader;
+    font-weight:800;
+    color:rgb(228, 230, 119);
+    font-size:4.8rem;
+    letter-spacing:3px;
+    display: inline-block;
+    text-transform: uppercase;
+    padding:0 10px;
+    margin:0;
+    @media (max-width:796px) {
+        margin:0;
+    }
+    @media (max-width:510px) {
+        font-size:3rem;
+    }
+    &:before, &:after {
+        @extend h1;
+        content:'♪';
+        font-size:4.8rem;
+        @media (max-width:510px) {
+            font-size:2.8rem;
+        }
+    }
+}
+
+// Timer, Score Count & Results Header
+h2 {
+    font-family: $fontHeader;
+    font-size:3rem;
+    color:white;
+    line-height:1.5;
+    letter-spacing:3px;
+    margin:5px 0;
+    text-transform: uppercase;
+    @media (max-width:510px) {
+        line-height:1.2;
+        font-size:2.4rem;
+        // font-weight:700;
+    }
+}
+
+// All captions
+p {
+    font-family: $fontMain;
+    font-size:1.6rem;
+    font-weight:normal;
+    color:white;
+    line-height:1.5;
+    letter-spacing:1.3px;
+    margin:5px 0;
 }

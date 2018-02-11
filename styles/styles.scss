@@ -2,23 +2,11 @@
 @import "components/mixins";
 @import "components/variables";
 @import "components/typography";
+@import "components/startScreen";
+@import "components/results";
 
 html {
     font-size:62.5%;
-}
-
-h1 {
-    font-family: 'Libre Franklin', sans-serif;
-    font-weight:800;
-    color:black;
-    font-size:3rem;
-}
-
-h2 {
-    font-family: 'Libre Baskerville', serif;
-    font-size:1.6rem;
-    font-weight:normal;
-
 }
 
 .wrapper {
@@ -26,115 +14,151 @@ h2 {
     margin:0 auto;
 }
 
-.main-wrapper {
-    padding-top:60px;
-    background:linear-gradient(to right, #B993D6,#8CA6DB);
-    
+// GAME SCREEN STYLES
+.gameScreen {
+    background-image:linear-gradient(to right, rgba(191, 167, 209, 0.2),rgba(140, 166, 219, 0.2)), url('../assets/stardust.png');
+    padding-top:40px;
+    height:100vh;
+    @media (max-width: 796px) {
+        padding:0;
+    }
+    .container {
+        position:relative;
+        overflow:hidden;
+        max-width:1100px;
+        width:90%;
+        height:85vh;
+        background-image:linear-gradient(rgba(44, 26, 146, 0.3),rgba(190, 70, 174, 0.2)), url('../assets/stardust.png');
+        margin:0 auto;
+        border:10px solid rgb(255, 255, 255);
+        box-shadow: 0px 4px 27px 9px rgba(0,0,0,1);
+        border-radius: 25px;
+        @media (max-width: 940px) {
+            width:90%;
+        }
+        @media (max-width: 796px) {
+            width:100%;
+            height:100vh;
+            border:none;
+            border-radius:0;
+        }
+    }
 }
 
-.startScreen {
-    width:100%;
-    height:90vh;
-    background:linear-gradient(to right, #B993D6,#8CA6DB);
-    text-align:center;
-    padding-top:150px;
-}
-
-.container {
-    position:relative;
-    // top:50px;
-    overflow:hidden;
-    max-width:800px;
-    width:100%;
-    height:80vh;
-    background-image:linear-gradient(rgba(47, 30, 139, 0.396),rgba(94, 20, 155, 0.338)), url('../assets/stardust.png');
-    // background-size: 400% 400%;
-    // animation: skyGradient 15s linear infinite;
-    margin:0 auto;
-    border:10px solid rgb(0, 0, 0);
-    border-radius: 10px;
-}
-
+// Shooting Stars
 .star {
     width:60px;
     height:3px;
     opacity:0.5;
     transform: rotate(135deg);
     padding:50px;
-    border-width: 3px 3px 3px 0;
     border-style: solid;
     border-image:linear-gradient(to bottom, white, rgba(0, 0, 0, 0)) 1 100%;
-    animation: shooter 10s linear infinite;
     cursor:pointer;
+    animation: shooter 1.5s linear infinite;
+    position:absolute;
 }
 
 #starOne {
-    position:absolute;
-    top:100px;
+    border-width: 3px 0 3px 3px ;
+    bottom:200px;
+    right:500px;
 }
 
 #starTwo {
-    position:absolute;
-    top:150px;
+    border-width: 3px 3px 3px 0;
+    bottom:100px;
+    right:500px;
+    animation-delay:2s;      
+    
 }
 
-.hill {
-    position:absolute;
-    bottom:-50px;
-    width:100%;
-    height:100px;
-    border-radius: 50%;
-    background:linear-gradient(to bottom, rgb(49, 0, 45),rgb(2, 2, 29));
+// Game Background
+.hillOne {
+    @include hill(30px, -80px, 180px solid rgb(5, 0, 5));
 }
 
+.hillTwo {
+    @include hill(-90px, -50px, 170px solid rgb(19, 0, 17));
+}
+
+.hillThree {
+    @include hill(390px, -50px, 130px solid rgb(34, 0, 31));  
+}
+
+.hillFour {
+    position:absolute;
+    width:400px;
+    height:200px;
+    background:rgb(0, 19, 16);
+    left:300px;
+    bottom:-150px;
+    border-radius: 90%;
+}
+
+.moon {
+    position:absolute;
+    right:-80px;
+    width:400px;
+    height:400px;
+    top:-100px;
+    border-radius:50%;
+    background-image:linear-gradient(rgba(142, 158, 171, 0.2),rgba(238, 242, 243, 0.1)), url('../assets/moon.png');
+    box-shadow: 0px 0px 39px 19px rgba(230,230,202,0.2); 
+    @media (max-width:940px) {
+        width:300px;
+        height:300px;
+    }
+}
+
+// Timer 
 .mycounter {
-    color:black;
-    width:200px;
-    height:100px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:10px 20px;
+    h2 {
+        padding:5px 10px;
+        background:rgba(2, 2, 2, 0.5);
+        border-radius:20px;
+    }
 }
 
-.score-timer {
-    margin:0 auto;
-
+// Score Count
+.score {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px 20px;
 }
 
+// Game Controls
+#restart {
+    @include controls(0);
+}
+
+#pause {
+    @include controls(50px);
+}
+
+#resume {
+    @include controls(100px);
+    transform: none;
+}
+
+// Shooting Stars Animation
 @keyframes shooter {
     0% {
         margin-left:0%;
     }
 
     50% {
-        margin-left:45%;
-        margin-top:45%;
+        margin-left:25%;
+        margin-top:25%;
     }
 
     100% {
-        margin-left:70%;
-        margin-top:70%;
+        margin-left:50%;
+        margin-top:50%;
     }
-}
-
-
-@keyframes skyGradient {
-    0% { 
-        background-position: 0% 50%;
-    }
-
-    50% { 
-        background-position: 100% 50%; 
-    }
-
-    100% { 
-        background-position: 0% 50%;   
-    }
-}
-
-button {
-    font-family: 'Libre Baskerville', serif;
-    font-size:1.4rem;
-    padding:10px 30px;
-    border-width:2px;
-    border-color:transparent;
-    border-radius:50px;
-    background:lightblue;
 }

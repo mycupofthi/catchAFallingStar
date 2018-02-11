@@ -4,40 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,700|Righteous" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <title>Catch a Falling Star Game</title>
 </head>
 <body>
     <main>
-        <div class="main-wrapper">
-            <section class="startScreen">
-                <div class="wrapper">
-                    <h1 class="animated pulse infinite">♫ Catch a Falling Star ♫</h1>
-                    <h2>You have 30 seconds to catch as many shooting stars as possible. Catch enough, and save them for your rainy day! If you're too slow, your days will forever be cloudy.</h2>
-                    <button class="startBtn">Play</button>
+           
+        <!-- START SCREEN-->
+        <section class="startScreen">
+            <div class="wrapper flexContainer">
+                <div class="startScreenHeader">
+                    <h1>Catch a Falling Star</h1>
                 </div>
+                <div class="startScreen-caption">
+                    <p>You have 30 seconds to catch as many shooting stars as possible.</p>
+                    <p>Score 15 or more, and your days will be full of sunshine!</p>
+                    <p>Score less than 8, your days will forever be rainy.</p>
+                </div>
+                <button class="btnStart animated pulse infinite">Play</button>
+            </div>
+        </section>
+        <!-- END OF START SCREEN -->
+
+        <!-- GAME SCREEN -->
+        <section class="gameScreen">
+            <section class="container">
+
+                <!-- Shooting Stars -->
+                <div class="star" id="starOne"></div>
+                <div class="star" id="starTwo"></div>
+
+                <!-- Game Background -->
+                <div class="hillOne"></div>
+                <div class="hillTwo"></div>
+                <div class="hillThree"></div>
+                <div class="hillFour"></div>
+                <div class="moon"></div>
+
+                <!-- Timer, Score & Game Controls -->
+                <div class="mycounter" id="timer"></div>
+                <div class="score"></div>  
+                <button class="btnRestart" id="restart"><i class="fas fa-redo-alt"></i></button>
+                <button class="btnPause" id="pause"><i class="fas fa-pause"></i></button>
+                <button class="btnResume" id="resume"><i class="fas fa-play"></i></button>
             </section>
-            <section class="gameScreen">
-                <section class="container">
-                    <div class="star" id="starOne"></div>
-                    <div class="star" id="starTwo"></div>
-                    <div class="hill"></div>
-                </section>
-                <section class="score-timer">
-                    <div class="wrapper">
-                        <div class="score"></div>  
-                        <div class="mycounter" id="timer"></div>
+        </section>
+        <!-- END OF GAME SCREEN -->
+
+        <!-- RESULTS SCREEN -->
+        <!-- Rainy Results -->
+        <section class="rainy">
+            <div class="wrapper">    
+                <div class="clouds"></div>
+                <div class="rain">
+                    <div class="raindropOne"></div>
+                    <div class="raindropTwo"></div>
+                    <div class="raindropThree"></div>
+                    <div class="raindropFour"></div>
+                    <div class="raindropFive"></div>
+                </div>
+                <div class="resultsCaption">
+                    <div class="resultsCaptionHeader">
+                        <h2>Better luck next time!</h2>
                     </div>
-                </section>
-                <section class="restart">
-                    <div class="wrapper">
-                        <button class="btn-restart">Restart</button>
+                    <p class="resultsScore"></p> 
+                    <p>Your days are gloomy and forever rainy!</p>
+                </div>
+                <button class="btnRestart animated pulse infinite" id="rainyAgain">Play Again</button>
+            </div>
+        </section>
+
+        <!-- Cloudy Results -->
+        <section class="cloudy">
+            <div class="wrapper">
+                <div class="clouds"></div>
+                <div class="resultsCaption">
+                    <div class="resultsCaptionHeader">
+                        <h2>Sorry, but you're so close!</h2>
                     </div>
-                </section>
-            </section>
-        </div>
+                    <p class="resultsScore"></p>
+                    <p>Your days will forever be cloudy. Hey, at least they're not rainy!</p>
+                </div>
+                <button class="btnRestart  animated pulse infinite" id="cloudyAgain">Play Again</button>
+            </div>
+        </section>
+
+        <!-- Sunny Results -->
+        <section class="sunny">
+            <div class="wrapper">
+                <div class="sunshine"></div>
+                <div class="resultsCaption">
+                    <div class="resultsCaptionHeader">
+                        <h2>Hooray! You saved enough for your pocket!</h2>
+                    </div>
+                    <p class="resultsScore"></p>
+                    <p>Your rainy days are forever saved! Nothing, but clear skies ahead.</p>
+                </div>
+                <button class="btnRestart  animated pulse infinite" id="sunnyAgain">Play Again</button>
+            </div>
+        </section>
+
     </main>
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
