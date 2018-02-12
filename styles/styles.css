@@ -171,12 +171,15 @@ h2 {
 
 p {
   font-family: "Cousine", monospace;
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: normal;
   color: white;
   line-height: 1.5;
   letter-spacing: 1.3px;
   margin: 5px 0; }
+  @media (max-width: 796px) {
+    p {
+      font-size: 1.6rem; } }
 
 .startScreen {
   width: 100%;
@@ -469,7 +472,7 @@ html {
   font-size: 62.5%; }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto; }
 
 .gameScreen {
@@ -507,36 +510,117 @@ html {
         border: none;
         border-radius: 0; } }
 
-.star {
+#starOne {
+  -webkit-animation-name: shooterLeft;
+  animation-name: shooterLeft;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
   width: 60px;
   height: 3px;
   opacity: 0.5;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
   padding: 50px;
   border-style: solid;
+  cursor: pointer;
+  position: absolute;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(white), to(transparent)) 1 100%;
   -webkit-border-image: -webkit-linear-gradient(top, white, transparent) 1 100%;
   -o-border-image: -o-linear-gradient(top, white, transparent) 1 100%;
   border-image: -webkit-gradient(linear, left top, left bottom, from(white), to(transparent)) 1 100%;
   border-image: linear-gradient(to bottom, white, transparent) 1 100%;
-  cursor: pointer;
-  -webkit-animation: shooter 1.5s linear infinite;
-  animation: shooter 1.5s linear infinite;
-  position: absolute; }
-
-#starOne {
   border-width: 3px 0 3px 3px;
-  bottom: 200px;
-  right: 500px; }
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg); }
 
 #starTwo {
+  -webkit-animation-name: shooterLeft;
+  animation-name: shooterLeft;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  width: 60px;
+  height: 3px;
+  opacity: 0.5;
+  padding: 50px;
+  border-style: solid;
+  cursor: pointer;
+  position: absolute;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(white), to(transparent)) 1 100%;
+  -webkit-border-image: -webkit-linear-gradient(top, white, transparent) 1 100%;
+  -o-border-image: -o-linear-gradient(top, white, transparent) 1 100%;
+  border-image: -webkit-gradient(linear, left top, left bottom, from(white), to(transparent)) 1 100%;
+  border-image: linear-gradient(to bottom, white, transparent) 1 100%;
   border-width: 3px 3px 3px 0;
-  bottom: 100px;
-  right: 500px;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s; }
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+#starThree {
+  -webkit-animation-name: shooterRight;
+  animation-name: shooterRight;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  width: 60px;
+  height: 3px;
+  opacity: 0.5;
+  padding: 50px;
+  border-style: solid;
+  cursor: pointer;
+  position: absolute;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  border-width: 3px 3px 3px 0;
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white)) 1 100%;
+  -webkit-border-image: -webkit-linear-gradient(top, transparent, white) 1 100%;
+  -o-border-image: -o-linear-gradient(top, transparent, white) 1 100%;
+  border-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white)) 1 100%;
+  border-image: linear-gradient(to bottom, transparent, white) 1 100%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+#starFour {
+  -webkit-animation-name: shooterRight;
+  animation-name: shooterRight;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
+  width: 60px;
+  height: 3px;
+  opacity: 0.5;
+  padding: 50px;
+  border-style: solid;
+  cursor: pointer;
+  position: absolute;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  border-width: 3px 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white)) 1 100%;
+  -webkit-border-image: -webkit-linear-gradient(top, transparent, white) 1 100%;
+  -o-border-image: -o-linear-gradient(top, transparent, white) 1 100%;
+  border-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white)) 1 100%;
+  border-image: linear-gradient(to bottom, transparent, white) 1 100%; }
 
 .hillOne {
   left: 30px;
@@ -668,7 +752,7 @@ html {
     background: #7c2828;
     opacity: 0.6; }
 
-@-webkit-keyframes shooter {
+@-webkit-keyframes shooterLeft {
   0% {
     margin-left: 0%; }
   50% {
@@ -678,7 +762,7 @@ html {
     margin-left: 50%;
     margin-top: 50%; } }
 
-@keyframes shooter {
+@keyframes shooterLeft {
   0% {
     margin-left: 0%; }
   50% {
@@ -686,4 +770,24 @@ html {
     margin-top: 25%; }
   100% {
     margin-left: 50%;
+    margin-top: 50%; } }
+
+@-webkit-keyframes shooterRight {
+  0% {
+    margin-left: 50%; }
+  50% {
+    margin-left: 25%;
+    margin-top: 25%; }
+  100% {
+    margin-left: 0%;
+    margin-top: 50%; } }
+
+@keyframes shooterRight {
+  0% {
+    margin-left: 50%; }
+  50% {
+    margin-left: 25%;
+    margin-top: 25%; }
+  100% {
+    margin-left: 0%;
     margin-top: 50%; } }

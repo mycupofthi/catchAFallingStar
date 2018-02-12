@@ -10,7 +10,7 @@ html {
 }
 
 .wrapper {
-    max-width:800px;
+    max-width:900px;
     margin:0 auto;
 }
 
@@ -46,31 +46,32 @@ html {
 }
 
 // Shooting Stars
-.star {
-    width:60px;
-    height:3px;
-    opacity:0.5;
-    transform: rotate(135deg);
-    padding:50px;
-    border-style: solid;
-    border-image:linear-gradient(to bottom, white, rgba(0, 0, 0, 0)) 1 100%;
-    cursor:pointer;
-    animation: shooter 1.5s linear infinite;
-    position:absolute;
-}
-
 #starOne {
-    border-width: 3px 0 3px 3px ;
-    bottom:200px;
-    right:500px;
+    @include stars(shooterLeft, 2s, 0);
+    border-image:linear-gradient(to bottom, white, rgba(0, 0, 0, 0)) 1 100%;
+    border-width: 3px 0 3px 3px;
+    transform: rotate(135deg);
 }
 
 #starTwo {
+    @include stars(shooterLeft, 3s, 1s);
+    border-image:linear-gradient(to bottom, white, rgba(0, 0, 0, 0)) 1 100%;    
     border-width: 3px 3px 3px 0;
-    bottom:100px;
-    right:500px;
-    animation-delay:2s;      
-    
+    transform: rotate(135deg);
+}
+
+#starThree {
+    @include stars(shooterRight, 2s, 1s);
+    border-width: 3px 3px 3px 0;
+    border-image:linear-gradient(to bottom, rgba(0, 0, 0, 0), white) 1 100%;
+    transform: rotate(45deg);
+}
+
+#starFour {
+    @include stars(shooterRight,3s, 0);
+    border-width: 3px 3px 3px 0;   
+    transform: rotate(45deg);
+    border-image:linear-gradient(to bottom, rgba(0, 0, 0, 0), white) 1 100%;    
 }
 
 // Game Background
@@ -147,7 +148,7 @@ html {
 }
 
 // Shooting Stars Animation
-@keyframes shooter {
+@keyframes shooterLeft {
     0% {
         margin-left:0%;
     }
@@ -159,6 +160,22 @@ html {
 
     100% {
         margin-left:50%;
+        margin-top:50%;
+    }
+}
+
+@keyframes shooterRight {
+    0% {
+        margin-left:50%;
+    }
+    
+    50% {
+        margin-left:25%;
+        margin-top:25%;
+    }
+    
+    100% {
+        margin-left:0%;
         margin-top:50%;
     }
 }

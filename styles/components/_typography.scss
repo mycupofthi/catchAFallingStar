@@ -44,10 +44,13 @@ h2 {
 // All captions
 p {
     font-family: $fontMain;
-    font-size:1.6rem;
+    font-size:2.1rem;
     font-weight:normal;
     color:white;
     line-height:1.5;
     letter-spacing:1.3px;
     margin:5px 0;
+    @media (max-width:796px) {
+        font-size:1.6rem;
+    }
 }

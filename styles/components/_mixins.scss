@@ -68,3 +68,18 @@
     background:lightblue;
     border-radius:50%;
 }
+
+@mixin stars($animName, $duration, $delay) {
+    animation-name: $animName;
+    animation-duration: $duration;
+    animation-delay: $delay;            
+    width:60px;
+    height:3px;
+    opacity:0.5;
+    padding:50px;
+    border-style: solid;
+    cursor:pointer;
+    position:absolute;
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite; 
+}

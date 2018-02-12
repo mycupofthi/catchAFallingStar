@@ -8,11 +8,11 @@ const game = {};
 game.player = { score: 0 };
 
 // Game container minus the moon (W x H)
-game.cW = ($('.container').width() - 400) ;
-game.cH = ($('.container').height() - 400);   
+game.cWidth = ($('.container').width() - 400);
+game.cHeight = ($('.container').height() - 400);   
 
 // Timer
-game.counter = 31;
+game.counter = 30;
 game.countdown = function() {
     if (game.counter === 0) {
         game.results();
@@ -37,34 +37,49 @@ game.addPoint = function() {
 }
 
 // Random position of star
-game.randomStarPosition = function() {
-    game.randomX = Math.floor((Math.random() * game.cW));
-    game.randomY = Math.floor((Math.random() * game.cH));
-    $('#starOne').css('left', game.randomX);
-    $('#starOne').css('top', game.randomY);
+game.starId = ['#starOne', '#starTwo', '#starThree', '#starFour'];
+
+// On page load, randomly positions stars
+function randPos(starId) {
+    for (i = 0; i < starId.length; i++) {
+        game.id = starId[i];
+        game.randX = Math.floor((Math.random() * game.cWidth));
+        game.randY = Math.floor((Math.random() * game.cHeight));
+        $(game.id).css('left', game.randX);
+        $(game.id).css('top', game.randY);
+    }
 }
 
-// Random position of star 2
-game.randomStarPosition2 = function() {
-    game.randomX2 = Math.floor((Math.random() * game.cW));
-    game.randomY2 = Math.floor((Math.random() * game.cH));
-    $('#starTwo').css('left', game.randomX2);
-    $('#starTwo').css('top', game.randomY2);
+// Add point when click on star
+function catchAStar(starId) {
+    for (i = 0; i < starId.length; i++) {
+        $(starId[i]).on('click', function() {
+            game.addPoint();
+        });
+    }
 }
 
-// When you click on the star, it disappears and repositions
-game.catchStar = function() {
-    $('#starOne').on('click', function() { 
-        game.randomStarPosition();       
-        game.addPoint();
-    });
-}
-
-// Star 2
-game.catchStar2 = function() {
-    $('#starTwo').on('click', function() {
-        game.randomStarPosition2();
-        game.addPoint();
+// After star is clicked, random positions again
+game.moveStar = function() {
+    $('#starOne, #starTwo, #starThree, #starFour').on('click', function() {
+        game.randX = Math.floor((Math.random() * game.cWidth));
+        game.randY = Math.floor((Math.random() * game.cHeight));
+        if (this.id === 'starOne') {
+            $('#starOne').css('left', game.randX);
+            $('#starOne').css('top', game.randY);
+        }
+        else if (this.id === 'starTwo') {
+            $('#starTwo').css('left', game.randX);
+            $('#starTwo').css('top', game.randY);
+        }
+        else if (this.id === 'starThree') {
+            $('#starThree').css('left', game.randX);
+            $('#starThree').css('top', game.randY);
+        }
+        else {
+            $('#starFour').css('left', game.randX);
+            $('#starFour').css('top', game.randY);
+        }
     });
 }
 
@@ -128,18 +143,20 @@ game.hideScreens = function() {
     $(".sunny").hide();    
 }
 
-// On page load, start button gets the game ready
+// On page load, intial score displayed 
+// Screens are hid
+// Start button gets the game ready
+
 game.init = function() { 
-    game.start();
+    game.displayScore();
     game.hideScreens();
+    game.start();
+    randPos(game.starId);
+    catchAStar(game.starId);
+    game.moveStar();
 }
 
 $(function() {
     game.init();
-    game.displayScore();
-    game.catchStar();
-    game.catchStar2();
-    game.randomStarPosition();
-    game.randomStarPosition2();
     game.controls();
 });
