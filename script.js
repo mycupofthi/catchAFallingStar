@@ -149,9 +149,9 @@ game.init = function() {
     randPos(game.starId);
     catchAStar(game.starId);
     game.moveStar();
+    game.controls();
 }
 
 $(function() {
     game.init();
-    game.controls();
 });
