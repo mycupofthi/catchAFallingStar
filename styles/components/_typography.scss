@@ -1,7 +1,6 @@
 // Main Title
 h1 {
     font-family: $fontHeader;
-    font-weight:800;
     color:rgb(228, 230, 119);
     font-size:4.8rem;
     letter-spacing:3px;
@@ -9,6 +8,7 @@ h1 {
     text-transform: uppercase;
     padding:0 10px;
     margin:0;
+    text-shadow: 0px 0px 12px rgba(211, 202, 110, 1);
     @media (max-width:796px) {
         margin:0;
     }
@@ -25,7 +25,20 @@ h1 {
     }
 }
 
-// Timer, Score Count & Results Header
+// Score Count
+.score 
+    h2 {
+    font-family: $fontHeader;
+    color:rgb(235, 236, 167);
+    text-shadow: 0px 0px 12px rgba(211, 202, 110, 1);
+    font-size:3rem;
+    line-height:1.5;
+    letter-spacing:3px;
+    margin:5px 0;
+    text-transform: uppercase;
+}
+
+// Timer & Results Header
 h2 {
     font-family: $fontHeader;
     font-size:3rem;
@@ -37,7 +50,6 @@ h2 {
     @media (max-width:510px) {
         line-height:1.2;
         font-size:2.4rem;
-        // font-weight:700;
     }
 }
 

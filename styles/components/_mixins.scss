@@ -27,7 +27,7 @@
     position:absolute;
     top:50px;
     margin:10px 20px;
-    padding:10px;
+    padding:12px;
     border-radius:50%;
     color:white;
     transform: scaleX(-1);
@@ -49,6 +49,7 @@
     border-right: 280px solid transparent;
 }
 
+// Raindrops
 @mixin raindropBig($left) {
     left:$left;
     top:10px;
@@ -69,6 +70,7 @@
     border-radius:50%;
 }
 
+// Stars
 @mixin stars($animName, $duration, $delay) {
     animation-name: $animName;
     animation-duration: $duration;
@@ -81,5 +83,5 @@
     cursor:pointer;
     position:absolute;
     animation-timing-function: linear; 
-    animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
 }

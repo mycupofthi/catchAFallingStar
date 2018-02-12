@@ -1,8 +1,3 @@
-// - Start the timer when the player presses play
-// - Stars begin to shoot
-// - As a player clicks on star, it collects the score and adds it to the bottom
-// - At the end of the timer, based on score - gives you one of three results - rainy, cloudy or shine 
-
 const game = {};
 
 game.player = { score: 0 };
@@ -59,7 +54,7 @@ function catchAStar(starId) {
     }
 }
 
-// After star is clicked, random positions again
+// After star is clicked, randomly positions again
 game.moveStar = function() {
     $('#starOne, #starTwo, #starThree, #starFour').on('click', function() {
         game.randX = Math.floor((Math.random() * game.cWidth));
@@ -146,7 +141,7 @@ game.hideScreens = function() {
 // On page load, intial score displayed 
 // Screens are hid
 // Start button gets the game ready
-
+// Stars are randomly positioned & click ready
 game.init = function() { 
     game.displayScore();
     game.hideScreens();

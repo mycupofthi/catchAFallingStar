@@ -135,14 +135,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 h1, h1:before, h1:after {
   font-family: "Righteous", cursive;
-  font-weight: 800;
   color: #e4e677;
   font-size: 4.8rem;
   letter-spacing: 3px;
   display: inline-block;
   text-transform: uppercase;
   padding: 0 10px;
-  margin: 0; }
+  margin: 0;
+  text-shadow: 0px 0px 12px #d3ca6e; }
   @media (max-width: 796px) {
     h1, h1:before, h1:after {
       margin: 0; } }
@@ -155,6 +155,16 @@ h1, h1:before, h1:after {
     @media (max-width: 510px) {
       h1:before, h1:after {
         font-size: 2.8rem; } }
+
+.score h2 {
+  font-family: "Righteous", cursive;
+  color: #ebeca7;
+  text-shadow: 0px 0px 12px #d3ca6e;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 3px;
+  margin: 5px 0;
+  text-transform: uppercase; }
 
 h2 {
   font-family: "Righteous", cursive;
@@ -184,10 +194,10 @@ p {
 .startScreen {
   width: 100%;
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(191, 167, 209, 0.2)), to(rgba(140, 166, 219, 0.2))), url("../assets/stardust.png");
-  background-image: -webkit-linear-gradient(left, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../assets/stardust.png");
-  background-image: -o-linear-gradient(left, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../assets/stardust.png");
-  background-image: linear-gradient(to right, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../assets/stardust.png");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(191, 167, 209, 0.4)), to(rgba(140, 166, 219, 0.2))), url("../images/stardust.png");
+  background-image: -webkit-linear-gradient(left, rgba(191, 167, 209, 0.4), rgba(140, 166, 219, 0.2)), url("../images/stardust.png");
+  background-image: -o-linear-gradient(left, rgba(191, 167, 209, 0.4), rgba(140, 166, 219, 0.2)), url("../images/stardust.png");
+  background-image: linear-gradient(to right, rgba(191, 167, 209, 0.4), rgba(140, 166, 219, 0.2)), url("../images/stardust.png");
   text-align: center;
   padding-top: 100px;
   position: relative; }
@@ -262,7 +272,10 @@ p {
 .rainy {
   width: 100%;
   height: 100vh;
-  background: #1c2e4e;
+  background-image: -webkit-gradient(linear, left top, right top, from(#30466d), to(#0e1b31));
+  background-image: -webkit-linear-gradient(left, #30466d, #0e1b31);
+  background-image: -o-linear-gradient(left, #30466d, #0e1b31);
+  background-image: linear-gradient(to right, #30466d, #0e1b31);
   text-align: center;
   padding-top: 100px;
   position: relative; }
@@ -476,10 +489,10 @@ html {
   margin: 0 auto; }
 
 .gameScreen {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(191, 167, 209, 0.2)), to(rgba(140, 166, 219, 0.2))), url("../assets/stardust.png");
-  background-image: -webkit-linear-gradient(left, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../assets/stardust.png");
-  background-image: -o-linear-gradient(left, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../assets/stardust.png");
-  background-image: linear-gradient(to right, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../assets/stardust.png");
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(191, 167, 209, 0.2)), to(rgba(140, 166, 219, 0.2))), url("../images/stardust.png");
+  background-image: -webkit-linear-gradient(left, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../images/stardust.png");
+  background-image: -o-linear-gradient(left, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../images/stardust.png");
+  background-image: linear-gradient(to right, rgba(191, 167, 209, 0.2), rgba(140, 166, 219, 0.2)), url("../images/stardust.png");
   padding-top: 40px;
   height: 100vh; }
   @media (max-width: 796px) {
@@ -491,10 +504,10 @@ html {
     max-width: 1100px;
     width: 90%;
     height: 85vh;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(44, 26, 146, 0.3)), to(rgba(190, 70, 174, 0.2))), url("../assets/stardust.png");
-    background-image: -webkit-linear-gradient(rgba(44, 26, 146, 0.3), rgba(190, 70, 174, 0.2)), url("../assets/stardust.png");
-    background-image: -o-linear-gradient(rgba(44, 26, 146, 0.3), rgba(190, 70, 174, 0.2)), url("../assets/stardust.png");
-    background-image: linear-gradient(rgba(44, 26, 146, 0.3), rgba(190, 70, 174, 0.2)), url("../assets/stardust.png");
+    background-image: -webkit-gradient(linear, right top, left bottom, from(rgba(26, 4, 150, 0.3)), to(rgba(161, 28, 79, 0.3))), url("../images/stardust.png");
+    background-image: -webkit-linear-gradient(top right, rgba(26, 4, 150, 0.3), rgba(161, 28, 79, 0.3)), url("../images/stardust.png");
+    background-image: -o-linear-gradient(top right, rgba(26, 4, 150, 0.3), rgba(161, 28, 79, 0.3)), url("../images/stardust.png");
+    background-image: linear-gradient(to bottom left, rgba(26, 4, 150, 0.3), rgba(161, 28, 79, 0.3)), url("../images/stardust.png");
     margin: 0 auto;
     border: 10px solid white;
     -webkit-box-shadow: 0px 4px 27px 9px black;
@@ -541,8 +554,8 @@ html {
 #starTwo {
   -webkit-animation-name: shooterLeft;
   animation-name: shooterLeft;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 1.75s;
+  animation-duration: 1.75s;
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
   width: 60px;
@@ -597,8 +610,8 @@ html {
 #starFour {
   -webkit-animation-name: shooterRight;
   animation-name: shooterRight;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 1.75s;
+  animation-duration: 1.75s;
   -webkit-animation-delay: 0;
   animation-delay: 0;
   width: 60px;
@@ -653,13 +666,14 @@ html {
   border-right: 280px solid transparent; }
 
 .hillFour {
+  left: 190px;
+  bottom: -60px;
+  border-bottom: 130px solid #15021a;
   position: absolute;
-  width: 400px;
-  height: 200px;
-  background: #001310;
-  left: 300px;
-  bottom: -150px;
-  border-radius: 90%; }
+  width: 0;
+  height: 0;
+  border-left: 280px solid transparent;
+  border-right: 280px solid transparent; }
 
 .moon {
   position: absolute;
@@ -668,10 +682,10 @@ html {
   height: 400px;
   top: -100px;
   border-radius: 50%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(142, 158, 171, 0.2)), to(rgba(238, 242, 243, 0.1))), url("../assets/moon.png");
-  background-image: -webkit-linear-gradient(rgba(142, 158, 171, 0.2), rgba(238, 242, 243, 0.1)), url("../assets/moon.png");
-  background-image: -o-linear-gradient(rgba(142, 158, 171, 0.2), rgba(238, 242, 243, 0.1)), url("../assets/moon.png");
-  background-image: linear-gradient(rgba(142, 158, 171, 0.2), rgba(238, 242, 243, 0.1)), url("../assets/moon.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(142, 158, 171, 0.2)), to(rgba(238, 242, 243, 0.1))), url("../images/moon.png");
+  background-image: -webkit-linear-gradient(rgba(142, 158, 171, 0.2), rgba(238, 242, 243, 0.1)), url("../images/moon.png");
+  background-image: -o-linear-gradient(rgba(142, 158, 171, 0.2), rgba(238, 242, 243, 0.1)), url("../images/moon.png");
+  background-image: linear-gradient(rgba(142, 158, 171, 0.2), rgba(238, 242, 243, 0.1)), url("../images/moon.png");
   -webkit-box-shadow: 0px 0px 39px 19px rgba(230, 230, 202, 0.2);
   box-shadow: 0px 0px 39px 19px rgba(230, 230, 202, 0.2); }
   @media (max-width: 940px) {
@@ -703,7 +717,7 @@ html {
   position: absolute;
   top: 50px;
   margin: 10px 20px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50%;
   color: white;
   -webkit-transform: scaleX(-1);
@@ -721,7 +735,7 @@ html {
   position: absolute;
   top: 50px;
   margin: 10px 20px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50%;
   color: white;
   -webkit-transform: scaleX(-1);
@@ -739,7 +753,7 @@ html {
   position: absolute;
   top: 50px;
   margin: 10px 20px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50%;
   color: white;
   -webkit-transform: scaleX(-1);
